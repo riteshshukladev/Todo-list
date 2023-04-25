@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: linear-gradient(90deg,#ceefb2,#a29cf5);
+    background-image: linear-gradient(90deg,#f8df60,#ffa052);
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
     color: #fff;
@@ -13,6 +13,7 @@ header{
     font-size: 1rem;
     
 }
+
 form,header{
     display: flex;
     flex-direction: row;
@@ -21,11 +22,16 @@ form,header{
     min-height: 20vh;
 
 }
+form input{
+    width:30%;
+    
+}
 form input,form button{
-    padding: 0.5rem;
-    font-size: 1rem;
+    padding: 1rem;
+    font-size: 1.3rem;
     border: none;
     outline: none;
+    
 }
 form button{
     color: #c2d4b2;
@@ -36,4 +42,95 @@ form button{
 form button:hover{
     color: #fff;
     background: #000;
+}
+.todo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+.todo{
+    background:white;
+    margin: 0.5rem;
+    color: #000;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+}
+.todo li{
+    flex: 1;
+}
+.complete-btn,.trash-btn{
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+.complete-btn{
+    color: #fff;
+    background: green;
+}
+.trash-btn{
+    color: #fff;
+    background: orange;
+}
+.complete-btn:hover{
+    background: black;
+    color: white;
+}
+.trash-btn:hover{
+    color: #fff;
+    background: #000;
+}
+.todo-item{
+    padding :0 0.8rem;
+}
+.fa-trash,.fa-check{
+    pointer-events: none;
+}
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    color: #fd8624;
+    width: 12rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.select{
+    margin: 1rem;
+    position: relative;
+
+}
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: orange;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 25%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+.select:hover::after{
+    background: #000000;
+    color:white;
 }
